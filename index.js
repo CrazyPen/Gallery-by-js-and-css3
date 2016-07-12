@@ -13,19 +13,19 @@
 var height = document.body.clientHeight;
 var width = document.body.clientWidth;
 
-console.log(height);
 var gallery = document.getElementById("gallery");
 
 arrageImg();
 placeCenter(2);
 
-//setInterval(posUpdate, 1500);
+setInterval(posUpdate, 1500);
 
 function placeCenter(i) {
 	var imgs = document.getElementsByClassName("img-cell");
 	imgs[i].style.top = (height/2 - 150)+"px";
 	imgs[i].style.left = (width/2 - 190)+"px";
 	imgs[i].style.transform = "rotate(0deg)";
+	imgs[i].style.zIndex = 100;
 }
 function arrageImg(){
 	for(var i=0, len=imgData.length; i<len; i++){
@@ -37,8 +37,9 @@ function arrageImg(){
 		h3.textContent = imgData[i].title;
 		imgcell.appendChild(img);
 		imgcell.appendChild(h3);
+
 		imgcell.style.top = (Math.random()*height-130)+"px";
-		imgcell.style.left = (Math.random()*width/2-380)+"px";
+		imgcell.style.left = ((Math.random()>0.5?(width/2+380):0)+(Math.random()*(width/2-380)-190))+"px";
 		imgcell.style.transform = "rotate("+(Math.random()>0.5?"":"-")+Math.random()*45+"deg)";
 		gallery.appendChild(imgcell);
 	}
@@ -47,8 +48,11 @@ function arrageImg(){
 function posUpdate(){
 	var imgcell = document.getElementsByClassName("img-cell");
 	for(var i=0, len = imgcell.length; i<len; i++){
+		if( i===2){
+			continue;
+		}
 		imgcell[i].style.top = (Math.random()*height-130)+"px";
-		imgcell[i].style.left = (Math.random()*width-160)+"px";
+		imgcell[i].style.left = ((Math.random()>0.5?(width/2+380):0)+(Math.random()*(width/2-380)-190))+"px";
 		imgcell[i].style.transform = "rotate("+(Math.random()>0.5?"":"-")+Math.random()*45+"deg)";
 	}
 }
