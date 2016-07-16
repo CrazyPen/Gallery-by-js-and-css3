@@ -11,9 +11,38 @@ html,body{
 	overflow: hidden;
 	height: 100%;
 
+	text-align: center;
+
 	perspective: 1000;
 	-webkit-perspective: 1000;
 
+}
+#gallery nav{
+	position: absolute;
+	bottom: 100px;
+	width: 100%;
+	z-index: 1000;
+}
+#gallery nav li{
+	background-image: url(images/fanzhuan.png);
+	background-size: 100% 100%;
+	z-index: 1000;
+	width: 20px;
+	height: 20px;
+	margin-left: 20px;
+	border-radius: 50%;
+	display: inline-block;
+	list-style-type: none;
+	box-shadow: 1px 1px 1px #FCFCFC;
+	cursor: pointer;
+	transition: all .8s;
+	border: 2px solid rgba(0,0,0,0);
+}
+#gallery nav li:hover {
+	transform: scale(1.5,1.5);
+	border: 2px solid white;
+	background-color: #626262;
+	
 }
 .side {
 	position: absolute;
