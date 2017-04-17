@@ -25,8 +25,8 @@ html,body{
 }
 #gallery nav li{
 	background-image: url(images/fanzhuan.png);
-	background-size: 100% 100%;
-	z-index: 1000;
+	background-size: 100%;
+
 	width: 20px;
 	height: 20px;
 	margin-left: 20px;
@@ -35,13 +35,15 @@ html,body{
 	list-style-type: none;
 	box-shadow: 1px 1px 1px #FCFCFC;
 	cursor: pointer;
-	transition: all .8s;
+	-webkit-transition:all .6s;
+	transition: all .6s;
 	border: 2px solid rgba(0,0,0,0);
 }
 #gallery nav li:hover {
-	transform: scale(1.5,1.5);
+	-webkit-transform: scale(1.5,1.5);
+	        transform: scale(1.5,1.5);
 	border: 2px solid white;
-	background-color: #626262;
+	background-color: #cc6f12;
 	
 }
 .side {
@@ -52,7 +54,8 @@ html,body{
 	-webkit-backface-visibility: hidden;
 }
 .front {
-	transform: rotateY(0deg);	
+	-webkit-transform: rotateY(0deg);
+	        transform: rotateY(0deg);	
 	z-index: 1;
 }
 .back {
@@ -72,6 +75,7 @@ html,body{
 	position: absolute;
 
 	position: absolute;
+	-webkit-transition:all .8s;
 	transition:all .8s;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
